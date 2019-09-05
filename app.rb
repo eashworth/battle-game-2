@@ -22,6 +22,7 @@ class Battle < Sinatra::Base
   get '/attack_confirmed' do
     @player_1 = $player_1
     @player_2 = $player_2
+    @player_2.receive_damage
     erb :attack
   end
 
