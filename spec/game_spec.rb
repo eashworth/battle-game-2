@@ -9,5 +9,15 @@ describe Game do
       expect(hoover).to receive(:receive_damage)
       game.attack
     end
+    it 'switches victim' do
+      allow(hoover).to receive(:receive_damage)
+      game.attack
+      expect(game.victim).to eq henry
+    end
+    it 'switches aggressor' do
+      allow(hoover).to receive(:receive_damage)
+      game.attack
+      expect(game.aggressor).to eq hoover
+    end
   end
 end
